@@ -13,9 +13,9 @@ What we look for when evaluating code quality:
 
 Below is the list of tasks to work on. Accomplish as much as possible within 4 hours. If you don't have time to finish everything, you can outline your ideas as comments in code or use `IMPROVEMENTS.md`.
 
-- [ ] Creating database migrations
-  - [ ] In `migrations_tables.sql` write SQL for creating tables according `migrations/ERD.png` diagram
-  - [ ] In `migrations_data.sql` write SQL for populating tables with dummy data. See below the instructions on how to work with the database and migrations.
+- [x] Creating database migrations
+  - [x] In `migrations_tables.sql` write SQL for creating tables according `migrations/ERD.png` diagram
+  - [x] In `migrations_data.sql` write SQL for populating tables with dummy data. See below the instructions on how to work with the database and migrations.
 - [ ] Implement API endpoints
   - [ ] CRUD APIs for the `game` entity
   - [ ] POST API for creating a game, developer and publisher at once
