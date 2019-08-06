@@ -14,5 +14,12 @@ do $$
             ('4f6de11d-aadf-4246-8c04-0feb7535d3a8', 'blizzard', 'Blizzard');
         end if;
 
+        if not exists (select 1 from developer) then
+            insert into developer (id, slug, name) values
+            ('57c3b60c-23f6-4895-b8dc-6049f70d31ed', 'jjelm', 'John Elm'),
+            ('570fbd7a-fbbb-4eb9-b24d-bb8bd753ead5', 'bknut', 'Boris Knut'),
+            ('aa067f24-47b0-4580-a83f-1096119bed41', 'emi', 'Elli Mi');
+        end if;
+
     end
 $$
