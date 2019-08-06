@@ -1,3 +1,4 @@
+import './core/express-promise';
 import express from 'express';
 import { Pool } from 'pg';
 
