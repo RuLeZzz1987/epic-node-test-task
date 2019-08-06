@@ -1,6 +1,7 @@
 import './core/express-promise';
 import express from 'express';
 import { Pool } from 'pg';
+import logger from './core/logger';
 
 import registerRoutes from './api';
 
@@ -27,4 +28,4 @@ app.set('db', connectDb());
 
 registerRoutes(app);
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+app.set('server', app.listen(port, () => logger.info(`App listening on port ${port}!`)));

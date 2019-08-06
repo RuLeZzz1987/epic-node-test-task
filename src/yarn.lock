@@ -712,7 +712,7 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1:
+chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.4.1:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -1400,6 +1400,19 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   integrity sha1-l+gBqgUt8CRU3kawK/YhZCzchQI=
   dependencies:
     homedir-polyfill "^1.0.1"
+
+express-domain@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/express-domain/-/express-domain-1.0.5.tgz#f7ebf091eaeb3b81328961a302d0f0a1e11fc43b"
+  integrity sha1-9+vwkerrO4EyiWGjAtDwoeEfxDs=
+
+express-winston@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/express-winston/-/express-winston-3.2.1.tgz#95eae61620ece8dd7de976589fb823baa138dde7"
+  integrity sha512-yh49mpFcoLAFs4yuplIutTAqs+jgRQYB2bLoDTpMvQDARzQKHvABfj2PYMPfmk087+OsEBJmm96i6//q9RJnnw==
+  dependencies:
+    chalk "^2.4.1"
+    lodash "^4.17.10"
 
 express@^4.17.1:
   version "4.17.1"
@@ -2282,7 +2295,7 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
-lodash@^4.17.13, lodash@^4.17.14:
+lodash@^4.17.10, lodash@^4.17.13, lodash@^4.17.14:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
