@@ -1,6 +1,7 @@
 import winston from 'winston';
 import * as expressDomain from 'express-domain';
 import * as expressWinston from 'express-winston';
+import * as bodyParser from 'body-parser';
 import errorHandlerMiddleware from './middlewares/error-handler';
 import notFoundHandler from './middlewares/not-found-handler';
 import tracingMiddleware from './middlewares/tracing';
@@ -19,6 +20,13 @@ export default function registerRoutes(app) {
       new winston.transports.Console(),
     ]
   }));
+  app.use(bodyParser.json({limit: '2mb'}));
+  app.use(
+    bodyParser.urlencoded({
+      limit: '2mb',
+      extended: false
+    })
+  );
   app.use('/api/v1', internalRoutes);
   app.use(`/external`, externalRoutes);
   app.use('/*', notFoundHandler);
