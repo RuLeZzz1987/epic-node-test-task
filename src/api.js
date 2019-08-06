@@ -4,6 +4,8 @@ import * as expressWinston from 'express-winston';
 import errorHandlerMiddleware from './middlewares/error-handler';
 import notFoundHandler from './middlewares/not-found-handler';
 import tracingMiddleware from './middlewares/tracing';
+import internalRoutes from './routes/internal';
+import externalRoutes from './routes/external';
 
 export default function registerRoutes(app) {
 
@@ -17,11 +19,8 @@ export default function registerRoutes(app) {
       new winston.transports.Console(),
     ]
   }));
-
-  app.get(`/external/`, async (req, res, next) => {
-    res.json({ok: 'external ok'})
-  });
-
+  app.use('/api/v1', internalRoutes);
+  app.use(`/external`, externalRoutes);
   app.use('/*', notFoundHandler);
   app.use(expressWinston.errorLogger({
     baseMeta: { service: process.env.HOSTNAME },
