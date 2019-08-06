@@ -4,6 +4,7 @@ import * as expressWinston from 'express-winston';
 import * as bodyParser from 'body-parser';
 import errorHandlerMiddleware from './middlewares/error-handler';
 import notFoundHandler from './middlewares/not-found-handler';
+import validationErrorHandler from './middlewares/payload-validation-error-handler';
 import tracingMiddleware from './middlewares/tracing';
 import internalRoutes from './routes/internal';
 import externalRoutes from './routes/external';
@@ -30,6 +31,7 @@ export default function registerRoutes(app) {
   app.use('/api/v1', internalRoutes);
   app.use(`/external`, externalRoutes);
   app.use('/*', notFoundHandler);
+  app.use(validationErrorHandler);
   app.use(expressWinston.errorLogger({
     baseMeta: { service: process.env.HOSTNAME },
     transports: [
