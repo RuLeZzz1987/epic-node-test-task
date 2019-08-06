@@ -34,3 +34,13 @@ create table if not exists publisher
     name         varchar(64)        not null,
     created_date timestamp          not null default now()
 );
+
+create table if not exists player_game
+(
+    id        serial primary key,
+    game_id   uuid not null,
+    player_id uuid not null,
+    unique (game_id, player_id),
+    foreign key (game_id) references game (id) on delete restrict on update cascade,
+    foreign key (player_id) references player (id) on delete restrict on update cascade
+);
