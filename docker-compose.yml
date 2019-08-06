@@ -1,0 +1,46 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:11.2-alpine
+    container_name: postgres-test
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: rest_service
+  postgres-fake:
+    image: postgres:11.2-alpine
+    container_name: postgres-fake
+    depends_on:
+      - postgres
+  db-migrate:
+    image: postgres:11.2-alpine
+    container_name: db-migrate
+    depends_on:
+      - postgres-fake
+    links:
+      - postgres
+    volumes:
+      - ./migrations:/home/migrations
+    environment:
+      PGPASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: rest_service
+      POSTGRES_NAME: rest_service
+      POSTGRES_HOST: postgres-test
+    working_dir: /home/migrations
+    entrypoint:
+      - "/home/migrations/migrate.sh"
+  web-dev:
+    image: node:10.16.0-stretch-slim
+    container_name: web-dev
+    depends_on:
+      - db-migrate
+    volumes:
+      - ./src:/opt/node/
+    ports:
+      - 3000:3000
+    working_dir: /opt/node
+    links:
+      - postgres
+    entrypoint:
+      - "/bin/bash"

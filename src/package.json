@@ -1,0 +1,23 @@
+{
+  "name": "task_1",
+  "version": "1.0.0",
+  "description": "Full-Stack Node.js Engineer, Test task #1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run webpack && nodemon dist/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "pg": "^7.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "nodemon-webpack-plugin": "^4.0.8",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
