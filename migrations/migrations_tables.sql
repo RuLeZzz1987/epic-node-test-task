@@ -26,3 +26,11 @@ create table if not exists developer
     name         varchar(64)        not null,
     created_date timestamp          not null default now()
 );
+
+create table if not exists publisher
+(
+    id           uuid                        default uuid_generate_v4() primary key,
+    slug         varchar(64) unique not null,
+    name         varchar(64)        not null,
+    created_date timestamp          not null default now()
+);
