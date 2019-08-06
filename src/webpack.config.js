@@ -2,7 +2,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const NodemonPlugin = require( 'nodemon-webpack-plugin' );
 
-const watchMode = false;
+const watchMode = true;
 
 module.exports = {
   target: "node",
