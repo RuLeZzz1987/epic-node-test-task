@@ -44,3 +44,13 @@ create table if not exists player_game
     foreign key (game_id) references game (id) on delete restrict on update cascade,
     foreign key (player_id) references player (id) on delete restrict on update cascade
 );
+
+create table if not exists game_developer
+(
+    id        serial primary key,
+    game_id   uuid not null,
+    developer_id uuid not null,
+    unique (game_id, developer_id),
+    foreign key (game_id) references game (id) on delete restrict on update cascade,
+    foreign key (developer_id) references developer (id) on delete restrict on update cascade
+);
