@@ -1,4 +1,8 @@
 import './core/express-promise';
+import './services/external/deep-tought/stubs';
+import './services/external/magic-eight/stubs';
+import './services/external/wasserman/stubs';
+
 import express from 'express';
 import { Pool } from 'pg';
 import logger from './core/logger';
