@@ -2,6 +2,7 @@ import express from 'express';
 import Joi from 'joi';
 import gameService from '../../services/internal/game/game-service';
 import {ValidationError} from '../../core/errors';
+import {GameServiceRestrictionError, GameServiceError} from "../../services/internal/game/errors";
 
 const app = express();
 const joiName = Joi.string().min(3).max(64);
